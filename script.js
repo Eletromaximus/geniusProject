@@ -25,10 +25,15 @@ let shuffleOrder = () => {
 }
 // acende a proxima cor
 let lightColor = (element, number) => {
-  number = number * 500;
+  number = number * 1000;
   setTimeout(() => {
     element.classList.add('selected')
-  }, number - 250);
+    disableColor(element)
+  }, number - 500);
+  
+}
+
+let disableColor = (element) => {
   setTimeout(() => {
     element.classList.remove('selected')
   });
