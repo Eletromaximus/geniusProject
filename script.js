@@ -49,7 +49,7 @@ let checkOrder = () => {
 
 // função para o clique do usuario
 let click = (color) => {
-  clickedOrder(clickedOrder.length) = color;
+  clickedOrder[clickedOrder.length] = color;
   createColorElement(color).classList.add('selected');
 
   setTimeout(() => {
@@ -86,16 +86,19 @@ let gameOver = () => {
   playGame();
 }
 
+//função de inicio de jogo
 let playGame = () => {
   alert('Bem vindo ao Gênesis! Inciando novo jogo!')
   score = 0;
-
+  
   nextLevel();
 }
 
-green.addEventListener('click', click(0));
-red.addEventListener('click', click(1));
-yellow.addEventListener('click', click(2));
-green.addEventListener('click', click(3));
+//eventos de click para as cores
+green.onclick = () => click(0);
+red.onclick = () => click(1);
+yellow.onclick = () => click(2);
+blue.onclick = () => click(3);
+
 
 playGame();
